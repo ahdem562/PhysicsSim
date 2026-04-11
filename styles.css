@@ -1,0 +1,61 @@
+body {
+  font-family: 'Times New Roman', Times, serif, sans-serif;
+  background: #121212;
+  color: white;
+  text-align: center;
+}
+
+.auth-container {
+  width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  background: #1e1e2f;
+  border-radius: 10px;
+}
+
+input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+.toggle {
+  color: #aaa;
+  cursor: pointer;
+}
+
+#error-msg {
+  color: red;
+}
+
+#sim-list div {
+  background: #1e1e2f;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.sidebar {
+  margin-top: 30px;
+  padding: 20px;
+  background: #1e1e2f;
+  border-radius: 10px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
