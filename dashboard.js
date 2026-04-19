@@ -1,16 +1,16 @@
 window.onload = async function () {
-    //try {
-    //    const session = await apiRequest("/check_session.php");
+    try {
+        const session = await apiRequest("/check_session.php");
 
-    //    if (!session.logged_in) {
-    //        window.location.href = "index.html";
-    //        return;
-    //    }
+        if (!session.logged_in) {
+            window.location.href = "index.html";
+            return;
+        }
 
-    //    await loadSimulations();
-    //} catch (err) {
-    //    window.location.href = "index.html";
-    //}
+        await loadSimulations();
+    } catch (err) {
+        window.location.href = "index.html";
+    }
 };
 
 async function loadSimulations() {
