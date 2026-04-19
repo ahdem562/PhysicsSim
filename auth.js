@@ -23,14 +23,14 @@ async function handleAuth() {
   }
 
   try {
-    const endpoint = isLogin ? "/login" : "/register";
+    const endpoint = isLogin ? "/login.php" : "/register.php"; //edited
 
     const data = await apiRequest(endpoint, "POST", {
       email,
       password
     });
 
-    localStorage.setItem("token", data.token);
+    //deleted line no tokens used
 
     window.location.href = "dashboard.html";
 

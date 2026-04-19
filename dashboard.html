@@ -1,24 +1,38 @@
-<div class="sidebar">
-  <h2>Simulation Controls</h2>
- <input type="range" id="gravity">
-<input type="range" id="bounce">
-<input type="checkbox" id="airToggle">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-  <label>Gravity</label>
-  <input type="range" id="gravity" min="0" max="20" step="0.1">
+    <div class="sidebar">
+        <h2>Simulation Controls</h2>
 
-  <label>Bounciness</label>
-  <input type="range" id="bounce" min="0" max="1" step="0.05">
+        <label for="gravity">Gravity</label>
+        <input type="range" id="gravity" min="0" max="20" step="0.1">
 
-  <label>
-    <input type="checkbox" id="airToggle">
-    Air Resistance
-  </label>
-</div>
-<button onclick="saveSimulation()">Save Simulation</button>
-<script src="js/api.js"></script>
-<script src="js/dashboard.js"></script>
-<script src="js/controls.js"></script>
+        <label for="bounce">Bounciness</label>
+        <input type="range" id="bounce" min="0" max="1" step="0.05">
 
+        <label>
+            <input type="checkbox" id="airToggle">
+             Air Resistance
+        </label>
+
+        <button onclick="saveSimulation()">Save Simulation</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <div class="main-content">
+        <h2>Saved Simulations</h2>
+        <div id="sim-list"></div>
+    </div>
+
+    <script src="api.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="controls.js"></script>
 </body>
 </html>

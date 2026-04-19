@@ -1,20 +1,30 @@
-const API_URL = "http://localhost:3000/api"; // this needs to change
+const API_URL = "http://localhost/PhysicsSim/backend";
 
 async function apiRequest(endpoint, method = "GET", body = null) {
-  const res = await fetch(API_URL + endpoint, {
-    method,
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": "Bearer " + localStorage.getItem("token")
-    },
-    body: body ? JSON.stringify(body) : null
-  });
+    const options = {
+        method,
+        headers: {
+            "Content-Type": "application/json"
+        },
+        credentials: "include"
+    };
 
-  const data = await res.json();
+    if (body) {
+        options.body = JSON.stringify(body);
+    }
 
-  if (!res.ok) {
-    throw new Error(data.message || "API error");
-  }
+    const res = await fetch(API_URL + endpoint, options);
 
-  return data;
+    let data;
+    try {
+        data = await res.json();
+    } catch (err) {
+        throw new Error("Invalid server response");
+    }
+
+    if (!res.ok || data.success === false) {
+        throw new Error(data.message || "API error");
+    }
+
+    return data;
 }

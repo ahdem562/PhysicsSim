@@ -1,6 +1,7 @@
 <?php
 // connect to MySQL database using PHP
-$host = "localhost";
+
+$host = "127.0.0.1";
 $dbname = "physicssim";
 $dbuser = "root";
 $dbpass = "";
